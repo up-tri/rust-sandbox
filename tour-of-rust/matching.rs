@@ -1,3 +1,16 @@
+// 列挙型
+enum Langs {
+  JA,
+  EN,
+  FR,
+  CN,
+}
+
+struct Human {
+  name: String,
+  lang: Langs,
+}
+
 fn main() {
   let x = 123;
 
@@ -21,5 +34,15 @@ fn main() {
     _ => {
       println!("1000より大きいよ！");
     }
+  }
+
+  let taro = Human {
+    name: String::from("taro"),
+    lang: Langs::JA,
+  };
+
+  match taro.lang {
+    Langs::JA => println!("日本語使いです。"),
+    _ => println!("日本語を話せません。"),
   }
 }
